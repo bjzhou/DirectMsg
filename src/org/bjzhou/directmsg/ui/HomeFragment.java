@@ -110,7 +110,7 @@ public class HomeFragment extends MyFragment {
 			// TODO Auto-generated method stub
 			dmApi.setReadFromLocal(params[0]);
 			list = dmApi.getDMUserList();
-			if (!params[0])
+			if (!params[0] && getActivity() != null)
 				new UnreadApi(getActivity()).clear();
 			return null;
 		}

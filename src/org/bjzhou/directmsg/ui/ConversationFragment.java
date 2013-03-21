@@ -68,7 +68,7 @@ public class ConversationFragment extends MyFragment {
 				public void run() {
 					lv_conversation.setRefreshing();
 				}
-			}, 100);
+			}, 600);
 			break;
 		case SCREEN_ROTATE:
 			lv_conversation.setAdapter(adapter);
@@ -80,7 +80,7 @@ public class ConversationFragment extends MyFragment {
 				public void run() {
 					lv_conversation.setRefreshing();
 				}
-			}, 100);
+			}, 600);
 			break;
 		default:
 			break;
@@ -132,12 +132,6 @@ public class ConversationFragment extends MyFragment {
 			break;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		new GetMessageTask().execute();
-		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	@Override

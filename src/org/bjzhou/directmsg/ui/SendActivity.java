@@ -68,10 +68,8 @@ public class SendActivity extends Activity {
 			// TODO Auto-generated method stub
 			if (result) {
 				Toast.makeText(getApplicationContext(), "发送成功", 0).show();
-				setResult(1);
 			} else {
 				Toast.makeText(getApplicationContext(), "发送失败", 0).show();
-				setResult(-1);
 			}
 
 			super.onPostExecute(result);

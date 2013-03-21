@@ -2,18 +2,13 @@ package org.bjzhou.directmsg.ui;
 
 import org.bjzhou.directmsg.App;
 import org.bjzhou.directmsg.R;
-import org.bjzhou.directmsg.services.UnreadService;
 import org.bjzhou.directmsg.utils.AccessTokenHelper;
 import org.bjzhou.directmsg.views.MyFragment;
 
 import android.app.ActionBar;
 import android.app.ActionBar.OnNavigationListener;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ArrayAdapter;
@@ -34,6 +29,7 @@ public class HomeActivity extends FragmentActivity implements
 
 		Intent intent = getIntent();
 		if (AccessTokenHelper.ReadAccessToken(this) == null) {
+			intent = new Intent();
 			intent.setClass(this, LoginActivity.class);
 			startActivity(intent);
 			finish();
